@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/resources/styles/home.css">
+
+    <title>YouRadio - Home</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="">
+            <div class="nav">
+                <div class="left-nav">
+                    <h1 class="logo">You<span>Radio</span></h1>
+                </div>
+                <div class="right-nav">
+                    <div class="search">
+                        <input type="search" placeholder="Search for a radio station">
+                        <i class="fas fa-search"></i>
+
+                    </div>
+                    <span class="user">@user123</span>
+                    <span class="logout"><a href="/logout">LOGOUT</a></span>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="aside-top">
+                    <p class="active" id="mainActive"><i class="fas fa-fire-alt"></i>Radio Stations</p>
+                    <p id="favActive"><i class="fas fa-heart"></i>Your Favorites</p>
+                    <p id="userActive"><i class="fas fa-user"></i>Profile & Settings</p>
+                </div>
+                <div class="aside-bottom">
+                    <p><i class="fas fa-globe"></i>English, United Kingdom</p>
+                    <p><i class="fas fa-tag"></i>Talk & News</p>
+                    <div class="radio-img">
+                        <img :src="select('image')" :alt="select('name')">
+                    </div>
+                    <p class="radio-disc">
+                        {{ select('description')}}
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="content" id="main">
+                <div class="filter-nav">
+                    <div class="filters">
+                        <select name="" id="">
+                            <option value="0" selected>All categories</option>
+                            <option value="1">Music</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected>All countries</option>
+                            <option value="0">Morocco</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected>All languages</option>
+                            <option value="0">Arabic</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected>The most liked</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="radio-list-item" v-for="(station, i) in stations" @click="change(station)">
+                        <div class="radio-head">
+                            <img :src="station.image" alt="station.name">
+                            <div class="radio-info">
+                                <p class="disc">
+                                    {{ station.description }}
+                                </p>
+                                <div class="tags">
+                                    <p><i class="fas fa-globe"></i>English, United Kingdom</p>
+                                    <p><i class="fas fa-tag"></i>Talk & News</p>
+                                    <p><i class="fas fa-external-link-alt"></i><a target="_blank"
+                                            :href="station.website">Visit the official website</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio-footer">
+                            <p class="radio-name">{{ station.name }}</p>
+                            <p class="radio-likes"><i class="fas fa-heart"></i>123</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content" id="fav">
+                <div class="filter-nav">
+                    <div class="filters">
+                        <select name="" id="">
+                            <option value="0" selected>All categories</option>
+                            <option value="1">Music</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected>All countries</option>
+                            <option value="0">Morocco</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected>All languages</option>
+                            <option value="0">Arabic</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected>The most liked</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="box-content">
+                    <table class="fav-list">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Station Name</th>
+                                <th>Category</th>
+                                <th>Language</th>
+                                <th>Country</th>
+                                <th>Website</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/resources/images/cnn_logo.png" alt=""></td>
+                                <td>
+                                    <p class="station-name">CNN Radio News</p>
+                                    <p class="radio-disc">CNN radio news offers a live stream of the leading 24-hour
+                                    </p>
+                                </td>
+                                <td>Talk & News</td>
+                                <td>English</td>
+                                <td>United Kingdom</td>
+                                <td><i class="fas fa-external-link-alt"></i></td>
+                                <td><i class="fas fa-heart"></i></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/resources/images/cnn_logo.png" alt=""></td>
+                                <td>
+                                    <p class="station-name">CNN Radio News</p>
+                                    <p class="radio-disc">CNN radio news offers a live stream of the leading 24-hour
+                                    </p>
+                                </td>
+                                <td>Talk & News</td>
+                                <td>English</td>
+                                <td>United Kingdom</td>
+                                <td><i class="fas fa-external-link-alt"></i></td>
+                                <td><i class="fas fa-heart"></i></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/resources/images/cnn_logo.png" alt=""></td>
+                                <td>
+                                    <p class="station-name">CNN Radio News</p>
+                                    <p class="radio-disc">CNN radio news offers a live stream of the leading 24-hour
+                                    </p>
+                                </td>
+                                <td>Talk & News</td>
+                                <td>English</td>
+                                <td>United Kingdom</td>
+                                <td><i class="fas fa-external-link-alt"></i></td>
+                                <td><i class="fas fa-heart"></i></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/resources/images/cnn_logo.png" alt=""></td>
+                                <td>
+                                    <p class="station-name">CNN Radio News</p>
+                                    <p class="radio-disc">CNN radio news offers a live stream of the leading 24-hour
+                                    </p>
+                                </td>
+                                <td>Talk & News</td>
+                                <td>English</td>
+                                <td>United Kingdom</td>
+                                <td><i class="fas fa-external-link-alt"></i></td>
+                                <td><i class="fas fa-heart"></i></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/resources/images/cnn_logo.png" alt=""></td>
+                                <td class="disc">
+                                    <p class="station-name">CNN Radio News</p>
+                                    <p class="radio-disc">CNN radio news offers a live stream of the leading 24-hour
+                                    </p>
+                                </td>
+                                <td>Talk & News</td>
+                                <td>English</td>
+                                <td>United Kingdom</td>
+                                <td><i class="fas fa-external-link-alt"></i></td>
+                                <td><i class="fas fa-heart"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="content" id="user">
+                <div class="box-content">
+                    <div class="user">
+                        <h1>Edit Your Personal Information</h1>
+                        <form action="" class="user-form">
+                            <div class="form-control">
+                                <label for="username">Your username</label>
+                                <input type="text" id="username">
+                            </div>
+
+                            <div class="form-control">
+                                <label for="email">Your email</label>
+                                <input type="email" id="email">
+                            </div>
+
+                            <div class="form-control">
+                                <label for="country">Your country</label>
+                                <div class="select" id="country">
+                                    <select name="country">
+                                        <option value="1">Morocco</option>
+                                        <option value="2">France</option>
+                                        <option value="3">United States</option>
+                                        <option value="3">United Kingdom</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="oldPassword">Your old password</label>
+                                <input type="password" id="oldPassword" autocomplete>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="newPassword">Your old password</label>
+                                <input type="password" id="newPassword" autocomplete>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="reNewPassword">Your old password</label>
+                                <input type="password" id="reNewPassword" autocomplete>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="footer">
+                <div class="left-footer">
+                    <audio id="radioSrc" :src="select('stream_url')"></audio>
+                    <div class="play-btn" id="playBtn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="radio-info">
+                        <p class="radio-name">{{select('name')}}</p>
+                        <p class="radio-site">{{select('website')}}</p>
+                    </div>
+                </div>
+                <div class="right-footer">
+                    <i class="active fas fa-heart"></i>
+                    <div class="volume-bar">
+                        <input type="range" id="volume" min="0" max="100" value="50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/resources/scripts/mainApp.js"></script>
+</body>
+
+</html>

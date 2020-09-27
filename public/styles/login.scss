@@ -1,0 +1,134 @@
+@import 'select-list';
+$accent-color : #E9008C;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #111111;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    color: white;
+    height: 100%;
+}
+
+.form-container {
+    width: 400px;
+    border: 1px solid $accent-color;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: transparentize($accent-color, .93);
+
+    .form-control{
+        margin: 6px 0;
+        span{
+            color: red;
+            font-size: .7em;
+        }
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    select {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 8px;
+        border-bottom: 3px solid $accent-color;
+        color: white;
+
+        &::placeholder {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: .9em;
+        }
+    }
+
+    .select {
+        width: 100%;
+        @extend %select;
+    }
+
+
+    button {
+        background-color: $accent-color;
+        border: none;
+        outline: none;
+        padding: 10px 35px;
+        margin: 15px 0;
+        color: white;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+
+    .question {
+        font-size: .8em;
+        span {
+            color: $accent-color;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    .logo-text {
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            font-weight: bold;
+
+            span {
+                color: $accent-color;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+@media (max-width: 926px){
+    .container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .logo {
+        margin-bottom: 20px;
+        justify-content: center;
+        .logo-text {
+            h1 {
+                text-align: center;
+                font-size: 2.5em;
+            }
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 423px){
+    .form-container {
+        width: 100%;
+     }
+}

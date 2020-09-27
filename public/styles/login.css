@@ -1,0 +1,207 @@
+.form-container .select {
+  position: relative;
+}
+
+.form-container .select:after {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #E9008C;
+  position: absolute;
+  pointer-events: none;
+  top: 40%;
+  right: 8px;
+  content: "";
+  z-index: 3;
+}
+
+.form-container .select select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  z-index: 3;
+}
+
+.form-container .select select option {
+  background-color: #111111;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #111111;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  height: 100%;
+}
+
+.form-container {
+  width: 400px;
+  border: 1px solid #E9008C;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: rgba(233, 0, 140, 0.07);
+}
+
+.form-container .form-control {
+  margin: 6px 0;
+}
+
+.form-container .form-control span {
+  color: red;
+  font-size: .7em;
+}
+
+.form-container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-bottom: 3px solid #E9008C;
+  color: white;
+}
+
+.form-container input::-webkit-input-placeholder,
+.form-container select::-webkit-input-placeholder {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: .9em;
+}
+
+.form-container input:-ms-input-placeholder,
+.form-container select:-ms-input-placeholder {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: .9em;
+}
+
+.form-container input::-ms-input-placeholder,
+.form-container select::-ms-input-placeholder {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: .9em;
+}
+
+.form-container input::placeholder,
+.form-container select::placeholder {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: .9em;
+}
+
+.form-container .select {
+  width: 100%;
+}
+
+.form-container button {
+  background-color: #E9008C;
+  border: none;
+  outline: none;
+  padding: 10px 35px;
+  margin: 15px 0;
+  color: white;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  cursor: pointer;
+}
+
+.form-container .question {
+  font-size: .8em;
+}
+
+.form-container .question span {
+  color: #E9008C;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.logo .logo-text h1 {
+  font-size: 4em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.logo .logo-text h1 span {
+  color: #E9008C;
+  font-weight: normal;
+}
+
+@media (max-width: 926px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .logo {
+    margin-bottom: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .logo .logo-text h1 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+  .logo .logo-text p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 423px) {
+  .form-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=login.css.map */

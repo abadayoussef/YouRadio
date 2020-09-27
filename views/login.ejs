@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouRadio - Login or Sign Up</title>
+    <link rel="stylesheet" href="/resources/styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-text">
+                <h1><span>You</span>Radio</h1>
+                <p>Listen freely to your favorite radio stations</p>
+                <% if(messages.error) { %>
+                    <p><%= messages.error %></p>
+                <% } %>
+
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="signIn" class="form">
+                <div class="form-control">
+                    <span class="username-error"></span>
+                    <input type="text" name="username" placeholder="Enter a username">
+                </div>
+
+                <div class="form-control">
+                    <span class="email-error"></span>
+                    <input type="email" name="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-control">
+                    <span class="password-error"></span>
+                    <input type="password" name="password" placeholder="Enter a password" autocomplete="on">
+                </div>
+
+                <div class="form-control">
+                    <span class="rePassword-error"></span>
+                    <input type="password" name="rePassword" placeholder="Re-Enter the same password" autocomplete="on">
+                </div>
+
+                <div class="form-control">
+                    <span class="country-error"></span>
+                    <div class="select">
+                        <select name="country">
+                            <option value="" selected disabled>Select your country</option>
+                            <option value="1">Morocco</option>
+                            <option value="2">France</option>
+                            <option value="3">United States</option>
+                            <option value="4">United Kingdom</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Sign In</button>
+                <p class="question">You already have an account ? <span onclick="formToggle()">Sign In</span>
+                </p>
+            </form>
+
+
+            <form method="POST" id="login" action="/login" class="form" style="display: none;">
+                <div class="form-control">
+                    <span class="userEmail-error"></span>
+                    <input type="text" name="username" placeholder="Enter your username or email">
+                </div>
+                <div class="form-control">
+                    <span class="passwordLogin-error"></span>
+                    <input type="password" name="password" placeholder="Enter your password" autocomplete="on">
+                </div>
+                <button type="submit" name="login">Login</button>
+                <p class="question">
+                    You don't have an account ? <span onclick="formToggle()">Login</span>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="/resources/scripts/login.js"></script>
+</body>
+
+</html>

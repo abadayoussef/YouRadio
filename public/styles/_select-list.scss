@@ -1,0 +1,29 @@
+$accent-color : #E9008C;
+
+%select {
+    position: relative;
+    &:after {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $accent-color;
+        position: absolute;
+        pointer-events: none;
+        top: 40%;
+        right: 8px;
+        content: "";
+        z-index: 3;
+    }
+
+    & select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        position: relative;
+        z-index: 3;
+        option{
+            background-color: #111111;
+        }
+    }
+}
